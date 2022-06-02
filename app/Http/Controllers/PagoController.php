@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tecnico;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 
-class TecnicoController extends Controller
+class PagoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +13,7 @@ class TecnicoController extends Controller
      */
     public function index()
     {
-        $result = Tecnico::all();
-        return Inertia::render('Tecnico/Index',[
-            'tecnicos' => $result,
-        ]);
-        
+        //
     }
 
     /**
@@ -29,7 +23,7 @@ class TecnicoController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Tecnico/Create');
+        //
     }
 
     /**
@@ -51,7 +45,7 @@ class TecnicoController extends Controller
      */
     public function show($id)
     {
-        return Inertia::render('Tecnico/Show');
+        //
     }
 
     /**
@@ -62,7 +56,7 @@ class TecnicoController extends Controller
      */
     public function edit($id)
     {
-        return Inertia::render('Tecnico/Edit');
+        //
     }
 
     /**

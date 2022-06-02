@@ -15,30 +15,26 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+//rutass de inicio 
 
+Route::get('/', [\App\Http\Controllers\PageController::class, 'welcome']);
+
+//ruta de inicio autenticado 
+//son las rutas que usa autenticacion  
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+
+    Route::get('/dashboard', [\App\Http\Controllers\PageController::class, 'dashboard'])
+        ->name('dashboard');
+
+    //rutas de cliente
+    route::resource('Cliente',\App\Http\Controllers\ClienteController::class);
+
+    //rutas de tecnico 
+    route::resource('Tecnico', App\Http\Controllers\TecnicoController::class);
+    
 });
-
-route::get('/cliente', [App\Http\Controllers\clientecontroller::class, 'index'])->name('cliente');
-route::put('/cliente/editar', [App\Http\Controllers\clientecontroller::class, 'edit'])->name('cliente');
-route::delete('/cliente/eliminar', [App\Http\Controllers\clientecontroller::class, 'delete'])->name('cliente');
-route::post('/cliente/nuevo', [App\Http\Controllers\clientecontroller::class, 'new'])->name('cliente');
-
-
-route::resource('Tecnico',App\Http\Controllers\TecnicoController::class);
 
