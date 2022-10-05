@@ -29,7 +29,10 @@ Route::middleware([
 
     Route::get('/dashboard', [\App\Http\Controllers\PageController::class, 'dashboard'])
         ->name('dashboard');
-
+   
+    //ruta de Usuario
+    route::resource('User',\App\Http\Controllers\UsusarioController::class);
+    
     //rutas de cliente
     route::resource('Cliente',\App\Http\Controllers\ClienteController::class);
 
@@ -37,4 +40,5 @@ Route::middleware([
     route::resource('Tecnico', App\Http\Controllers\TecnicoController::class);
     
 });
+
 

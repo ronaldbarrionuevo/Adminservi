@@ -1,39 +1,48 @@
-<script setup>
-import AppLayout from "@/Layouts/AppLayout.vue";
-defineProps({
-  tecnicos: Array,
-});
-</script>
 
  <template>
   <app-layout>
-    <div>
-      <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-        <div>
-          <div class="md:grip md:grip-cols-3 md:gap-6">
-            <div class="md:col-span-1 flex justify-between">
-              <div class="px-4 sm:px-0">
-                <h1 class="text-3xl text-gray-900 font-bold">
-                  listado de Tecnicos
-                </h1>
-                <p class="mt-1 text-sm text-gray-600">
-                  abhdiadilabsxcilbnxlixilbx
-                </p>
-              </div>
-              <div class="px-4 sm:px-0"></div>
-            </div>
-            <div class="mt-5 md:mt-0 md:col-span-2">
-              hoalandjand
-              <!-- <pre>{{ tecnicos }}</pre> -->
-            </div>
-          </div>
-          <div class="hidden sm:block">
-            <div class="py-8">
-              <div class="border-t border-gray-900"></div>
-            </div>
+    <template #header>
+      <h2 class="font-semibold text-xl text-gray-800 leading-tight">Tecnico</h2>
+    </template>
+    <div class="py-12">
+      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+          <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
+          <pre>
+            <table class="table w-full table-fixed overflow-scroll">
+              <thead>
+                <tr>
+                  <th class="p-3 w-1/6">Id</th>
+                  <th class="p-3 w-1/3">Nombres</th>
+                  <th class="p-3 w-1/3">Direccion</th>
+                  <th class="p-3 w-1/3">Telefono</th>  
+                  <th class="p-3 w-1/3">acciones</th>
+                </tr>
+              </thead>
+            <tbody> 
+            <tr v-for="u in tecnicos" :key="u.id">
+                <td class="p-2 border" >{{ u.id }}</td>
+                <td class="p-3 border" >{{ u.nombre }}</td>
+                <td class="p-3 overflow-scroll w-1/3" >{{ u.direccion }}</td>
+                <td class="p-3 border" >{{ u.telefono }}</td>
+                <td class="p-3 border" >acciones</td>
+            </tr>
+              </tbody> --> 
+
+
+            </table>
+          
+            </pre>
           </div>
         </div>
       </div>
     </div>
   </app-layout>
 </template>
+
+<script setup>
+import AppLayout from "@/Layouts/AppLayout.vue";
+defineProps({
+  tecnicos: Array,
+});
+</script>
