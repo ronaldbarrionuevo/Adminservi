@@ -19,9 +19,9 @@ class TecnicoFactory extends Factory
         return [
             'nombre' => $this->faker->name(),
             'apellido' => $this->faker->name(),
-            //'fecha_nacimiento' => $this->faker->date(),
             'direccion' => $this->faker->text(),
             'telefono' => $this->faker->numberBetween(1,50),
+            'estado'=> $this->faker->numberBetween(1,20),
         ];
     }
 }

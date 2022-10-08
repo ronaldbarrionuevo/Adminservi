@@ -17,11 +17,11 @@ class ClienteFactory extends Factory
     public function definition()
     {
         return [
-            'nombre' => $this->faker->name(),
-            'apellido' => $this->faker->name(),
-            //'fecha_nacimiento' => $this->faker->date(),
-            'direccion' => $this->faker->text(),
+            'descripcion_cliente' => $this->faker->name(),
             'telefono' => $this->faker->numberBetween(1,50),
+            'direccion' => $this->faker->text(),
+            'estado' => $this->faker->numberBetween(1,20),
+            
         ];
     }
 }

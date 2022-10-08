@@ -13,13 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tecnicos', function (Blueprint $table) {
+        Schema::create('descuentos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('apellido');
-           // $table->time('fecha_nacimineto');
-            $table->string('direccion');
-            $table->integer('telefono');
+            $table->text('descripcion');
+            $table->integer('estado');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tecnico');
+        Schema::dropIfExists('descuentos');
     }
 };

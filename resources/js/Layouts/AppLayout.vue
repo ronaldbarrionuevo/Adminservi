@@ -66,6 +66,18 @@ const logout = () => {
                 >
                   Tecnico
                 </JetNavLink>
+                <JetNavLink
+                  :href="route('Cliente.index')"
+                  :active="route().current('Cliente.index')"
+                >
+                  Cliente
+                </JetNavLink>
+                <JetNavLink
+                  :href="route('User.index')"
+                  :active="route().current('User.index')"
+                >
+                  Usuario
+                </JetNavLink>
 
                 
               </div>
@@ -341,6 +353,18 @@ const logout = () => {
               :active="route().current('Tecnico.index')"
             >
               Tecnico
+            </JetResponsiveNavLink>
+            <JetResponsiveNavLink
+              :href="route('Cliente.index')"
+              :active="route().current('Cliente.index')"
+            >
+              Cliente
+            </JetResponsiveNavLink>
+            <JetResponsiveNavLink
+              :href="route('User.index')"
+              :active="route().current('User.index')"
+            >
+              Usuario
             </JetResponsiveNavLink>
           </div>
 

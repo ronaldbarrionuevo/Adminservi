@@ -12,22 +12,22 @@
             <table class="table w-full table-fixed overflow-scroll">
               <thead>
                 <tr>
-                  <th class="p-3 w-1/6">Id</th>
-                  <th class="p-3 w-1/3">Nombres</th>
-                  <th class="p-3 w-1/3">Direccion</th>
-                  <th class="p-3 w-1/3">Telefono</th>  
-                  <th class="p-3 w-1/3">acciones</th>
+                  <th class="p-3 w-1/6 overflow-hidden" >Id</th>
+                  <th class="p-3 w-1/3 overflow-hidden">Nombres</th>
+                  <th class="p-3 w-1/3 overflow-hidden">Direccion</th>
+                  <th class="p-3 w-1/3 overflow-hidden">Telefono</th>  
+                  <th class="p-3 w-1/3 overflow-hidden">acciones</th>
                 </tr>
               </thead>
             <tbody> 
             <tr v-for="u in tecnicos" :key="u.id">
                 <td class="p-2 border" >{{ u.id }}</td>
-                <td class="p-3 border" >{{ u.nombre }}</td>
-                <td class="p-3 overflow-scroll w-1/3" >{{ u.direccion }}</td>
-                <td class="p-3 border" >{{ u.telefono }}</td>
-                <td class="p-3 border" >acciones</td>
+                <td class="p-3 border overflow-hidden" >{{ u.nombre }}</td>
+                <td class="p-3 overflow-hidden w-1/3" >{{ u.direccion }}</td>
+                <td class="p-3 border overflow-hidden" >{{ u.telefono }}</td>
+                <td class="p-3 border overflow-hidden" >acciones</td>
             </tr>
-              </tbody> --> 
+              </tbody> 
 
 
             </table>
