@@ -20,7 +20,7 @@ class ClienteFactory extends Factory
             'descripcion_cliente' => $this->faker->name(),
             'telefono' => $this->faker->numberBetween(1,50),
             'direccion' => $this->faker->text(),
-            'estado' => $this->faker->numberBetween(1,20),
+            'estado'=> $this->faker->regexify('[1]'),
             
         ];
     }

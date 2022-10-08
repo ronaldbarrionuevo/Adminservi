@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Tecnico>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\servicio>
  */
-class TecnicoFactory extends Factory
+class ServicioFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,10 +17,7 @@ class TecnicoFactory extends Factory
     public function definition()
     {
         return [
-            'nombre' => $this->faker->name(),
-            'apellido' => $this->faker->name(),
-            'direccion' => $this->faker->text(),
-            'telefono' => $this->faker->numberBetween(1,50),
+            'nombreservicio' => $this->faker->name(),
             'estado'=> $this->faker->regexify('[1]'),
         ];
     }
