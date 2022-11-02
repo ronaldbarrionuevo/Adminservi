@@ -3,6 +3,11 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\UsusarioController;
+use App\Http\Controllers\TecnicoController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\DescuentoController;
+use App\Http\Controllers\ServicioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +43,12 @@ Route::middleware([
 
     //rutas de tecnico 
     route::resource('Tecnico', App\Http\Controllers\TecnicoController::class);
+
+    //rutas de descuento
+    route::resource('Descuento', App\Http\Controllers\DescuentoController::class);
+
+    //rutas de servicio
+    route::resource('Servicio', App\Http\Controllers\ServicioController::class);
     
 });
 

@@ -40,7 +40,18 @@ class TecnicoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'nombre' => 'required',
+                'apellido' => 'required',
+                'direccion' => 'required',
+                'telefono' => 'required'
+            ]
+        );
+
+        Tecnico::create($request->all());
+
+        return Redirect::route('Tecnico.index');
     }
 
     /**

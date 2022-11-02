@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\descuento;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class UsusarioController extends Controller
+class DescuentoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class UsusarioController extends Controller
      */
     public function index()
     {
-        $result = User::all();
-        return Inertia::render('User/Index',[
-            'Users' => $result,
+        $result = descuento::all();
+        return Inertia::render('Descuento/Index',[
+            'descuentos' => $result,
         ]);
     }
 
@@ -28,7 +28,7 @@ class UsusarioController extends Controller
      */
     public function create()
     {
-        return Inertia::render('User/Create');
+        //
     }
 
     /**
@@ -39,26 +39,16 @@ class UsusarioController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(
-            [
-                'name' => 'required',
-                'email' => 'required',
-                'password' => 'required',
-            ]
-        );
-
-        User::create($request->all());
-
-        return Redirect::route('User/Index');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\descuento  $descuento
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(descuento $descuento)
     {
         //
     }
@@ -66,10 +56,10 @@ class UsusarioController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\descuento  $descuento
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(descuento $descuento)
     {
         //
     }
@@ -78,10 +68,10 @@ class UsusarioController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\descuento  $descuento
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, descuento $descuento)
     {
         //
     }
@@ -89,10 +79,10 @@ class UsusarioController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\descuento  $descuento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(descuento $descuento)
     {
         //
     }
