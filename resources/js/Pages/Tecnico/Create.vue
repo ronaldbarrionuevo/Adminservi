@@ -2,6 +2,7 @@
 import AppLayout from "@/Layouts/AppLayout.vue";
 import { Inertia } from "@inertiajs/inertia";
 
+
 defineProps({
   tecnicos: Array,
 
@@ -11,7 +12,7 @@ defineProps({
   },
   methods: {
     submit() {
-      Inertia.post(route("Tecnico.store"),{
+      Inertia.post(route("Tecnico.store"), {
         nombre: this.nombre,
         direccion: this.direccion,
         telefono: this.telefono,

@@ -48,7 +48,10 @@ class UsusarioController extends Controller
         );
 
         User::create($request->all());
-
+        //return redirect()->route('User/Index');
+        
+        
+        
         return Redirect::route('User/Index');
     }
 
